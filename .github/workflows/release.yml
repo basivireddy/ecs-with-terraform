@@ -23,12 +23,7 @@ jobs:
         run: |
           git config user.name "Github Actions: Release"
           git config user.email "<>"
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '16'
-      - run: |
-          yarn global add release-it @release-it/keep-a-changelog @release-it/bumper
-          release-it --ci --config .github/release-it.json ${{ github.event.inputs.level }}
+
 
       - name: Determine docker image tag name
         run: |
